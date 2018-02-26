@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "memoryMap.vh"
 
 module top_TB;
   
@@ -70,6 +70,17 @@ module top_TB;
       .ACK_IO(wbAckIo)
   );
   
+  initial begin
+    clk = 0;
+    rst = 1;
+    repeat(5) #10 clk = ~clk;
+    rst = 0;
+    forever #10 clk = ~clk;
+  end
   
+  initial begin
+    artySwitch = 0;
+    artyBTN = 0;
+  end
   
 endmodule

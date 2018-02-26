@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Arty_Comm_1.srcs/sources_1/new" \
+"../../../../Arty_Comm_1.srcs/sources_1/new/arty_top.v" \
+"../../../../Arty_Comm_1.srcs/sources_1/new/button_debouncer.v" \
+"../../../../Arty_Comm_1.srcs/sources_1/new/mojo_top.v" \
+"../../../../Arty_Comm_1.srcs/sim_1/new/top_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

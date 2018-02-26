@@ -48,10 +48,10 @@ module arty_top(
     
     // - Define Locals - // 
     // -- WB Signals -- //
-    reg top_cyc;
-    reg top_stb;
-    reg top_we;
-    reg top_ack;
+    wire top_cyc;
+    wire top_stb;
+    wire top_we;
+    wire top_ack;
     reg [15:0] top_dat_i;
     reg [15:0] top_dat_o;
     // -- Registers -- //
@@ -62,10 +62,6 @@ module arty_top(
     
     // - Initialize - //
     initial begin
-      top_cyc = 0;
-      top_stb = 0;
-      top_we = 0;
-      top_ack = 0;
       top_dat_i = 0;
       top_dat_o = 0;
       top_data = 0;
@@ -90,7 +86,7 @@ module arty_top(
     );
     
     always @(posedge SYS_CLK) begin
-      if(top_stb & top_stb & ~top_we) begin
+      if(top_cyc & top_stb & ~top_we) begin
         top_data <= {JB, JC};
       end
     end

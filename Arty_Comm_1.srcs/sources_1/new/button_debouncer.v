@@ -44,7 +44,6 @@ module button_debouncer(
     reg buttonPush;
     reg [1:0] btnSBuffer;
     reg btnPolFlipped;
-    reg btnInBuffer;
     reg btnOutBuffer;
     
     // -- Wires -- //
@@ -53,13 +52,13 @@ module button_debouncer(
     wire [2:0] btnPolStatus;
     wire btnRisingEdge;
     wire btnFallingEdge;
+    wire btnInBuffer;
     
     // - Initialize - //
     initial begin
       delayTimer = 0;
       btnSBuffer = 0;
       btnPolFlipped = 0;
-      btnInBuffer = 0;
       btnOutBuffer = 0;
     end
     // - Assigns - //

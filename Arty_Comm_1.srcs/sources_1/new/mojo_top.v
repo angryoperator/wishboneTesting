@@ -35,6 +35,10 @@ module mojo_top(
     
     // - Parameters - //
     parameter DEBUG_MODE = 0;
+    parameter ADDRESS_ONE = 8'h02;
+    parameter ADDRESS_TWO = 8'h04;
+    parameter ADDRESS_THREE = 8'h06;
+    parameter ADDRESS_FOUR = 8'h08;
     
     // - Locals - //
     reg [15:0] dataIBuf;
